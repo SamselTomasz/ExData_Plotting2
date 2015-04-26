@@ -24,7 +24,7 @@ if (!exists("scc")){
 }
 if (!exists("pm25")){
         pm25 <- data.frame()
-        pm25 <- 
+        pm25 <- readRDS(file="Data/summarySCC_PM25.rds")
 }
 
 ##----------------------------------------------------------------------
@@ -37,6 +37,7 @@ newData <- pm25[pm25$SCC %in% coal$SCC,]
 ## run a sum over data
 newDataFrame <- ddply(newData, "year", summarise, total=sum(Emissions))
 
+## do the plot
 png(filename="plotNo4.png")
 qplot(x      = year,
       xlab   = "Year",

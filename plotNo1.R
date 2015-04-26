@@ -22,7 +22,7 @@ if (!exists("scc")){
 }
 if (!exists("pm25")){
         pm25 <- data.frame()
-        pm25 <- 
+        pm25 <- readRDS(file="Data/summarySCC_PM25.rds")
 }
 
 ##----------------------------------------------------------------------
